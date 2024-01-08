@@ -1,17 +1,12 @@
-import 'package:events/features/model/event.dart';
+import 'package:events/core/extensions/event_extensions.dart';
 import 'package:flutter/material.dart';
+
+import '../../model/event.dart';
 
 class EventItem extends StatelessWidget {
   const EventItem({super.key, required this.event});
 
   final Event event;
-
-  String get _data {
-    if (event.endDate?.isNotEmpty ?? false) {
-      return '${event.startDate} - ${event.endDate}';
-    }
-    return event.startDate;
-  }
 
   @override
   Widget build(BuildContext context) {
@@ -38,7 +33,7 @@ class EventItem extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Text(
-                _data,
+                event.presentableDate(),
                 style: Theme.of(context).textTheme.bodySmall,
               ),
               Text(

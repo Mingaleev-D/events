@@ -1,6 +1,7 @@
-import 'package:events/features/home/ui/widgets/event_item.dart';
-import 'package:events/features/model/mock.dart';
+import 'package:events/features/ui/home/widgets/event_item.dart';
 import 'package:flutter/material.dart';
+
+import '../../model/mock.dart';
 
 class EventList extends StatelessWidget {
   const EventList({super.key});

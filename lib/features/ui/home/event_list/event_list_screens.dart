@@ -1,7 +1,7 @@
-import 'package:events/features/home/ui/widgets/event_category.dart';
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
 
+import '../widgets/event_category.dart';
 import '../widgets/event_list.dart';
 import '../widgets/search_box.dart';
 

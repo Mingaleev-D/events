@@ -1,6 +1,6 @@
-import 'package:events/features/model/mock.dart';
 import 'package:flutter/material.dart';
 
+import '../../model/mock.dart';
 import 'event_category_item.dart';
 
 class EventCategory extends StatelessWidget {

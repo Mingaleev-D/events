@@ -1,3 +1,5 @@
+import 'package:events/features/ui/model/speaker.dart';
+
 class Event {
   final String image;
   final String startDate;
@@ -6,6 +8,8 @@ class Event {
   final String location;
   final String cost;
   final String? discountCost;
+  final List<Speaker> speakers;
+  final String description;
 
   const Event({
     required this.image,
@@ -15,5 +19,7 @@ class Event {
     required this.location,
     required this.cost,
     required this.discountCost,
+    required this.speakers,
+    required this.description,
   });
 }

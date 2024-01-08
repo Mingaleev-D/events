@@ -19,4 +19,8 @@ final nunitosans = _baseNunitoSans.copyWith(
     fontSize: 16,
     fontWeight: FontWeight.w600,
   ),
+  headlineSmall: _baseNunitoSans.headlineSmall?.copyWith(
+    fontSize: 24,
+    fontWeight: FontWeight.w600,
+  ),
 );
