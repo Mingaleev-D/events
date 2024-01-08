@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../../model/event.dart';
+import '../../../../data/model/event.dart';
 
 class AboutSelection extends StatelessWidget {
   const AboutSelection({super.key, required this.event});

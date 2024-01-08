@@ -1,7 +1,9 @@
-import 'package:events/features/ui/home/widgets/event_item.dart';
+import 'package:events/features/ui/routes/navigation/home_nav.dart';
 import 'package:flutter/material.dart';
 
-import '../../model/mock.dart';
+import '../../../../../di/di.dart';
+import '../../../../data/model/mock.dart';
+import 'event_item.dart';
 
 class EventList extends StatelessWidget {
   const EventList({super.key});
@@ -11,7 +13,8 @@ class EventList extends StatelessWidget {
     return ListView.separated(
         itemBuilder: (context, index) {
           return InkWell(
-            onTap: () {},
+            onTap: () =>
+                getIt<HomeNav>().openEventDetails(generateEvents[index]),
             child: Padding(
               padding: const EdgeInsets.symmetric(vertical: 16.0),
               child: EventItem(

@@ -1,4 +1,4 @@
-import '../../features/ui/model/event.dart';
+import '../../features/data/model/event.dart';
 
 extension XEvent on Event {
   String presentableDate() {

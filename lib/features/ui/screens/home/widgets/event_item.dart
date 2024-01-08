@@ -1,7 +1,7 @@
 import 'package:events/core/extensions/event_extensions.dart';
 import 'package:flutter/material.dart';
 
-import '../../model/event.dart';
+import '../../../../data/model/event.dart';
 
 class EventItem extends StatelessWidget {
   const EventItem({super.key, required this.event});

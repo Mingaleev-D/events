@@ -1,7 +1,7 @@
 import 'package:fluentui_system_icons/fluentui_system_icons.dart';
 import 'package:flutter/material.dart';
 
-import '../../model/event.dart';
+import '../../../../data/model/event.dart';
 
 class SliverImageAppBar extends StatelessWidget {
   const SliverImageAppBar({super.key, required this.event});
@@ -16,7 +16,7 @@ class SliverImageAppBar extends StatelessWidget {
         padding: const EdgeInsets.only(left: 16.0),
         child: CircleAvatar(
           child: IconButton(
-            onPressed: () {},
+            onPressed: () => Navigator.pop(context),
             icon: const Icon(FluentIcons.arrow_step_back_20_filled),
           ),
         ),

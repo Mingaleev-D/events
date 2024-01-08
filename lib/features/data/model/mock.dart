@@ -1,4 +1,4 @@
-import 'package:events/features/ui/model/speaker.dart';
+import 'package:events/features/data/model/speaker.dart';
 import 'package:faker/faker.dart';
 
 import 'event.dart';

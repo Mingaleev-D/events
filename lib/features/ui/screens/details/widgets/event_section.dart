@@ -2,7 +2,7 @@ import 'package:events/core/extensions/event_extensions.dart';
 import 'package:fluentui_system_icons/fluentui_system_icons.dart';
 import 'package:flutter/material.dart';
 
-import '../../model/event.dart';
+import '../../../../data/model/event.dart';
 
 class EventSection extends StatelessWidget {
   const EventSection({super.key, required this.event});

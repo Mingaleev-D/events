@@ -9,8 +9,11 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
+  auto_route: ^7.8.4
   cupertino_icons: ^1.0.6
   google_fonts: ^6.1.0
+  get_it: ^7.6.6
+  injectable:
   gap: ^3.0.1
   fluentui_system_icons: ^1.1.223
   faker: ^2.1.0
@@ -18,6 +21,9 @@ dependencies:
 dev_dependencies:
   flutter_test:
     sdk: flutter
+  auto_route_generator: ^7.3.2
+  build_runner:
+  injectable_generator:
   flutter_lints: ^3.0.1
 
 flutter:

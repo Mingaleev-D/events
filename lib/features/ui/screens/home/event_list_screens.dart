@@ -1,10 +1,12 @@
+import 'package:auto_route/annotations.dart';
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
 
-import '../widgets/event_category.dart';
-import '../widgets/event_list.dart';
-import '../widgets/search_box.dart';
+import 'widgets/event_category.dart';
+import 'widgets/event_list.dart';
+import 'widgets/search_box.dart';
 
+@RoutePage()
 class EventListScreens extends StatelessWidget {
   const EventListScreens({super.key});
 
