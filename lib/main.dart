@@ -1,3 +1,5 @@
+import 'package:events/core/design.dart';
+import 'package:events/features/home/ui/screens.dart';
 import 'package:flutter/material.dart';
 
 void main() => runApp(const MyApp());
@@ -9,17 +11,10 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      theme: ThemeData(useMaterial3: true),
-      home: Scaffold(
-        appBar: AppBar(
-          title: Text('Material App Bar'),
-        ),
-        body: Center(
-          child: Container(
-            child: Text('Hello World'),
-          ),
-        ),
+      theme: ThemeData.light(useMaterial3: true).copyWith(
+        textTheme: nunitosans,
       ),
+      home: const EventListScreens(),
     );
   }
 }
