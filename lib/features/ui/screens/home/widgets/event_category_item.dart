@@ -7,12 +7,14 @@ class EventCategoryItem extends StatelessWidget {
     required this.text,
     required this.isLast,
     required this.isFirst,
+    required this.onTap,
   });
 
   final bool isActive;
   final String text;
   final bool isLast;
   final bool isFirst;
+  final VoidCallback onTap;
 
   @override
   Widget build(BuildContext context) {
@@ -20,13 +22,14 @@ class EventCategoryItem extends StatelessWidget {
       margin: isLast
           ? const EdgeInsets.only(right: 16.0)
           : EdgeInsets.only(left: isFirst ? 16.0 : 8.0),
-      duration: const Duration(milliseconds: 700),
+      duration: const Duration(milliseconds: 300),
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(16),
         color: isActive ? const Color(0xff214d42) : Colors.transparent,
       ),
       child: InkWell(
-        onTap: () {},
+        onTap: () => onTap(),
+        borderRadius: BorderRadius.circular(16),
         child: Padding(
           padding: const EdgeInsets.symmetric(horizontal: 16.0),
           child: Center(

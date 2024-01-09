@@ -4,9 +4,13 @@ import '../../../../data/model/mock.dart';
 import 'event_category_item.dart';
 
 class EventCategory extends StatelessWidget {
-  const EventCategory({super.key, required this.activeCategory});
+  const EventCategory(
+      {super.key,
+      required this.activeCategory,
+      required this.onCategorySelected});
 
   final String activeCategory;
+  final Function(String category) onCategorySelected;
 
   @override
   Widget build(BuildContext context) {
@@ -23,6 +27,7 @@ class EventCategory extends StatelessWidget {
               text: categories[index],
               isFirst: index == 0,
               isLast: index == categories.length - 1,
+              onTap: () => onCategorySelected(categories[index]),
             );
           },
         ),

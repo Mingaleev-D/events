@@ -1,8 +1,29 @@
+import 'package:events/features/ui/bloc/event_list/event_list_bloc.dart';
 import 'package:flutter/material.dart';
 import 'package:fluentui_system_icons/fluentui_system_icons.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 
-class SearchBox extends StatelessWidget {
+class SearchBox extends StatefulWidget {
   const SearchBox({super.key});
+
+  @override
+  State<SearchBox> createState() => _SearchBoxState();
+}
+
+class _SearchBoxState extends State<SearchBox> {
+  late TextEditingController _searchController;
+
+  @override
+  void initState() {
+    super.initState();
+    _searchController = TextEditingController();
+  }
+
+  @override
+  void dispose() {
+    _searchController.dispose();
+    super.dispose();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -17,6 +38,7 @@ class SearchBox extends StatelessWidget {
                 borderRadius: BorderRadius.circular(16),
               ),
               child: TextFormField(
+                controller: _searchController,
                 style: Theme.of(context).textTheme.bodyLarge,
                 textAlignVertical: TextAlignVertical.center,
                 decoration: InputDecoration(
@@ -34,7 +56,10 @@ class SearchBox extends StatelessWidget {
           ),
         ),
         IconButton(
-            onPressed: () {}, icon: const Icon(FluentIcons.send_20_regular))
+            onPressed: () => context
+                .read<EventListBloc>()
+                .add(EventListEvent.search(searchText: _searchController.text)),
+            icon: const Icon(FluentIcons.send_20_regular))
       ],
     );
   }

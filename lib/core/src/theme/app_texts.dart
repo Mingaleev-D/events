@@ -23,4 +23,8 @@ final nunitosans = _baseNunitoSans.copyWith(
     fontSize: 24,
     fontWeight: FontWeight.w600,
   ),
+  labelMedium: _baseNunitoSans.labelMedium?.copyWith(
+    fontSize: 17,
+    fontWeight: FontWeight.w600,
+  ),
 );

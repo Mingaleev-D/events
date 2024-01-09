@@ -10,6 +10,7 @@ final List<String> categories = [
   'design',
   'movies',
   'business',
+  'domain',
 ];
 
 List<Event> generateEvents = [
@@ -23,6 +24,7 @@ List<Event> generateEvents = [
     discountCost: null,
     speakers: speakers,
     description: faker.lorem.sentences(40).join(' '),
+    category: ['art', 'tech', 'business'],
   ),
   Event(
     image: 'assets/imgs/city/moscow.jpg',
@@ -34,6 +36,7 @@ List<Event> generateEvents = [
     discountCost: '120',
     speakers: speakers.sublist(0, 3),
     description: faker.lorem.sentences(30).join(' '),
+    category: ['domain'],
   ),
   Event(
     image: 'assets/imgs/city/kazan.jpg',
@@ -45,6 +48,7 @@ List<Event> generateEvents = [
     discountCost: '250',
     speakers: speakers.sublist(3, 5),
     description: faker.lorem.sentences(20).join(' '),
+    category: ['tech', 'business'],
   ),
   Event(
     image: 'assets/imgs/city/nizhny_novgorod.jpg',
@@ -56,6 +60,7 @@ List<Event> generateEvents = [
     discountCost: '150',
     speakers: speakers.sublist(5, 8),
     description: faker.lorem.sentences(40).join(' '),
+    category: ['tech'],
   ),
   Event(
     image: 'assets/imgs/city/ekaterinburg.jpg',
@@ -67,6 +72,7 @@ List<Event> generateEvents = [
     discountCost: null,
     speakers: speakers.sublist(1, 5),
     description: faker.lorem.sentences(40).join(' '),
+    category: ['tech', 'design'],
   ),
   Event(
     image: 'assets/imgs/city/kaliningrad.jpg',
@@ -78,6 +84,7 @@ List<Event> generateEvents = [
     discountCost: '90',
     speakers: speakers.sublist(0, 4),
     description: faker.lorem.sentences(50).join(' '),
+    category: ['art', 'business'],
   ),
   Event(
     image: 'assets/imgs/city/arkhangelsk.jpg',
@@ -89,6 +96,7 @@ List<Event> generateEvents = [
     discountCost: '280',
     speakers: speakers.sublist(0, 6),
     description: faker.lorem.sentences(40).join(' '),
+    category: ['art', 'business', 'domain', 'design'],
   ),
   Event(
     image: 'assets/imgs/city/sochi.jpg',
@@ -100,6 +108,7 @@ List<Event> generateEvents = [
     discountCost: null,
     speakers: speakers.sublist(5, 8),
     description: faker.lorem.sentences(47).join(' '),
+    category: ['art'],
   ),
 ];
 List<Speaker> speakers = const [

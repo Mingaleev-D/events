@@ -10,6 +10,7 @@ class Event {
   final String? discountCost;
   final List<Speaker> speakers;
   final String description;
+  final List<String> category;
 
   const Event({
     required this.image,
@@ -21,5 +22,6 @@ class Event {
     required this.discountCost,
     required this.speakers,
     required this.description,
+    required this.category,
   });
 }
