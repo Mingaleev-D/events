@@ -1,6 +1,8 @@
 import 'package:auto_route/annotations.dart';
+import 'package:events/di/di.dart';
 import 'package:events/features/data/model/event.dart';
 import 'package:events/features/ui/common_widgets/positioned_button.dart';
+import 'package:events/features/ui/routes/navigation/home_nav.dart';
 import 'package:events/features/ui/screens/home/widgets/event_item.dart';
 import 'package:fluentui_system_icons/fluentui_system_icons.dart';
 import 'package:flutter/material.dart';
@@ -93,7 +95,7 @@ class _BookingScreenState extends State<BookingScreen> {
             ),
             PositionedButton(
               text: 'Proceed to payment',
-              onPressed: () {},
+              onPressed: () => getIt<HomeNav>().openPayment(),
             )
           ],
         ),
