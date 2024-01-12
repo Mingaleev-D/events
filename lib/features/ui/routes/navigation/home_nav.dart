@@ -13,4 +13,9 @@ class HomeNav {
       _appRouter.push(EventDetailsRoute(event: event));
 
   void openBooking(Event event) => _appRouter.push(BookingRoute(event: event));
+  void openPayment() => _appRouter.push(const PaymentRoute());
+  void openStatus(bool isSuccess) =>
+      _appRouter.push(StatusRoute(isSuccess: isSuccess));
+  void backToBooking() =>
+      _appRouter.popUntil((route) => route.settings.name == HomeBotnRoute.name);
 }
