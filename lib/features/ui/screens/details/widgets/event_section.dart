@@ -62,7 +62,7 @@ class EventSection extends StatelessWidget {
                   Padding(
                     padding: const EdgeInsets.only(right: 8.0),
                     child: Text(
-                        event.discountCost == '0'
+                        event.discountCost == 0
                             ? ''
                             : '${event.discountCost} \₽',
                         style: Theme.of(context).textTheme.bodySmall?.copyWith(
@@ -70,7 +70,7 @@ class EventSection extends StatelessWidget {
                             )),
                   ),
                 Text(
-                  event.cost == '0' ? 'free' : '${event.cost} \₽',
+                  event.cost == 0 ? 'free' : '${event.cost} \₽',
                   style: Theme.of(context).textTheme.titleMedium,
                 )
               ],

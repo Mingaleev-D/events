@@ -6,8 +6,8 @@ class Event {
   final String? endDate;
   final String name;
   final String location;
-  final String cost;
-  final String? discountCost;
+  final double cost;
+  final double? discountCost;
   final List<Speaker> speakers;
   final String description;
   final List<String> category;

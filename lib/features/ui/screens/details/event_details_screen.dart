@@ -3,6 +3,7 @@ import 'package:events/di/di.dart';
 import 'package:events/features/ui/bloc/event_detail_fav/event_detail_cubit.dart';
 import 'package:events/features/ui/bloc/favorite/favorite_bloc.dart';
 import 'package:events/features/ui/common_widgets/positioned_button.dart';
+import 'package:events/features/ui/routes/navigation/home_nav.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import '../../../data/model/event.dart';
@@ -44,7 +45,7 @@ class EventDetailsScreen extends StatelessWidget {
               ),
               PositionedButton(
                 text: 'Book',
-                onPressed: () {},
+                onPressed: () => getIt<HomeNav>().openBooking(event),
               )
             ],
           ),
