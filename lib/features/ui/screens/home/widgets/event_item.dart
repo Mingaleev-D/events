@@ -2,14 +2,29 @@ import 'package:events/core/extensions/event_extensions.dart';
 import 'package:flutter/material.dart';
 
 import '../../../../data/model/event.dart';
+import '../../../common_widgets/quantity.dart';
 
 class EventItem extends StatelessWidget {
-  const EventItem({super.key, required this.event});
+  const EventItem({
+    super.key,
+    required this.event,
+    this.withQuantity = false,
+    this.quantity = 1,
+    this.onIncrement,
+    this.onDecrement,
+  });
 
   final Event event;
+  final bool withQuantity;
+  final int quantity;
+  final VoidCallback? onIncrement;
+  final VoidCallback? onDecrement;
 
   @override
   Widget build(BuildContext context) {
+    final _totalCount = event.cost * quantity;
+    final _totalDiscount =
+        (event.discountCost == null) ? '' : (event.discountCost! * quantity);
     return Row(
       children: [
         Padding(
@@ -47,6 +62,15 @@ class EventItem extends StatelessWidget {
                 event.location ?? 'Online',
                 style: Theme.of(context).textTheme.bodySmall,
               ),
+              if (withQuantity)
+                Padding(
+                  padding: const EdgeInsets.only(top: 8.0),
+                  child: Quantity(
+                    quantity: quantity,
+                    onIncrement: () => onIncrement!(),
+                    onDecrement: () => onDecrement!(),
+                  ),
+                ),
             ],
           ),
         ),
@@ -55,11 +79,11 @@ class EventItem extends StatelessWidget {
           child: Column(
             children: [
               Text(
-                event.cost == '0' ? 'free' : '${event.cost} \₽',
+                event.cost == 0 ? 'free' : '${_totalCount} \₽',
                 style: Theme.of(context).textTheme.bodyMedium,
               ),
               Text(
-                event.discountCost == null ? '' : '${event.discountCost} \₽',
+                event.discountCost == null ? '' : '${_totalDiscount} \₽',
                 style: Theme.of(context).textTheme.bodySmall?.copyWith(
                       decoration: TextDecoration.lineThrough,
                     ),

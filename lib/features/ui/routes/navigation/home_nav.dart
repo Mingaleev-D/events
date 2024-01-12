@@ -11,4 +11,6 @@ class HomeNav {
 
   void openEventDetails(Event event) =>
       _appRouter.push(EventDetailsRoute(event: event));
+
+  void openBooking(Event event) => _appRouter.push(BookingRoute(event: event));
 }

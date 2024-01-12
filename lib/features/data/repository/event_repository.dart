@@ -5,8 +5,10 @@ import '../model/mock.dart';
 
 const _delay = Duration(seconds: 2);
 
-@injectable
+@lazySingleton
 class EventRepository {
+  final Set<Event> _favorites = {};
+
   Future<List<Event>> getEvents(String? category) {
     return Future.delayed(_delay, () {
       if (category == null || category == 'all') {
@@ -26,4 +28,17 @@ class EventRepository {
                 element.name.toLowerCase().contains(searchText.toLowerCase()))
             .toList());
   }
+
+  Future<void> saveFavorite(Event event) =>
+      Future.delayed(_delay, () => _favorites.add(event));
+
+  Future<void> delete(Event event) =>
+      Future.delayed(_delay, () => _favorites.remove(event));
+
+  // Future<void> isFavorite(Event event) =>
+  //     Future.delayed(_delay, () => _favorites.contains(event));
+  bool isFavorite(Event event) => _favorites.contains(event);
+
+  Future<List<Event>> getFavorites() =>
+      Future.delayed(_delay, () => _favorites.toList());
 }

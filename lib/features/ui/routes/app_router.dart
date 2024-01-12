@@ -13,5 +13,6 @@ class AppRouter extends $AppRouter {
           AutoRoute(page: FavoriteRoute.page),
         ]),
         AutoRoute(page: EventDetailsRoute.page),
+        AutoRoute(page: BookingRoute.page),
       ];
 }
